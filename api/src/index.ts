@@ -10,6 +10,10 @@ const { PORT, STREAM_API_KEY, STREAM_API_SECRET } = process.env;
 const app = express();
 app.use(express.json());
 
+app.get("/", (req: any, res: any) => {
+  res.json({ message: "✅ Auth route is working!" });
+});
+
 app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => {
